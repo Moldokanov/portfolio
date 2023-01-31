@@ -1,0 +1,947 @@
+body {
+    font-family:chess;
+    margin: 0;
+    background-color: black;
+}
+
+.breadcrumbs {
+    text-align: center;
+    margin: 0 auto; 
+    padding: 20px; 
+    background: grey;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.okno {
+  background: lightgreen;
+  margin: 100vh 0;
+  height: 200px;
+}
+​        
+/* Зафиксируем кнопку */
+.btn {
+  position: fixed; 
+  top: 10px;
+}
+
+.tex{
+    float: left;
+    color: purple;
+    font-size: 30px;
+}
+.breadcrumbs li {
+    display: inline-block; 
+} 
+.breadcrumbs a { 
+    color: purple; 
+    text-decoration: none; 
+}
+.breadcrumbs li + li::before {
+    content: '/'; 
+    padding: 0 7px; 
+}
+
+.breadcrumbs img{
+    float: right;
+    top: -25px;
+    margin-top: -25px;
+}
+
+img{
+    border-radius: 30px;
+}
+
+.box {
+    position: relative;
+    text-align: center;
+    color: white;
+}
+
+.pulse {
+  position: absolute; // Нужно будет в будущем, для позиционирования эффекта
+  text-align: center; 
+  padding: 20px; // Отступ можете подобрать свой.
+  border-radius: 50%; // Делаем икноку круглой
+  background: goldenrod;
+  right: 500px;
+  left: 675px;
+  color: goldenrod;
+  width: 80px;
+  height: 80px;
+  transform: translate(-50%, -50%);
+}
+
+.pulse::after,
+.pulse::before {
+  content: '';
+  position: absolute;
+  border: 5px solid goldenrod;
+  /*left: -20px;*/
+  opacity: 1;
+  right: -20px;
+  top: -20px;
+  bottom: -20px;
+  border-radius: 50%;
+  animation: pulse 2.5s linear infinite;
+}
+
+.pulse::after {
+  animation-delay: 1.25s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+.text {
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    color: goldenrod;
+    font-size: 50px;
+    font-style: italic;
+    margin-bottom: 50px;
+    margin-top: 10px;
+    margin-left: 30px;
+    transform: translate(-50%, -50%);
+
+}
+
+.pulseA {
+  position: absolute; // Нужно будет в будущем, для позиционирования эффекта
+  text-align: center; 
+  padding: 20px; // Отступ можете подобрать свой.
+  border-radius: 50%; // Делаем икноку круглой
+  background: goldenrod;
+  top: 48%;
+  left: 9%;
+  color: goldenrod;
+  width: 80px;
+  height: 80px;
+  transform: translate(-50%, -50%);
+}
+
+.pulseA::after,
+.pulseA::before {
+  content: '';
+  position: absolute;
+  border: 2px solid grey;
+  left: -20px;
+  opacity: 0;
+  right: -20px;
+  top: -20px;
+  bottom: -20px;
+  border-radius: 50%;
+  animation: pulse 1s linear infinite;
+}
+
+.pulseA::after {
+  animation-delay: 1.25s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+
+.f1{
+    position: absolute;
+    top: 45%;
+    cursor: pointer;
+    left: 9%;
+    color: grey;
+    font-size: 1px;
+    margin-bottom: 40px;
+    margin-top: 30px;
+    transform: translate(-50%, -50%);    
+}
+.f1:hover{
+    position: absolute;
+    top: 60%;
+    left: 10%;
+    color: goldenrod;
+    font-size: 20px;
+    margin-bottom: 40px;
+    margin-top: 30px;
+    transform: translate(-50%, -50%);    
+}
+
+.pulseB {
+  position: absolute; // Нужно будет в будущем, для позиционирования эффекта
+  text-align: center; 
+  padding: 20px; // Отступ можете подобрать свой.
+  border-radius: 50%; // Делаем икноку круглой
+  background: goldenrod;
+  top: 45%;
+  left: 20%;
+  color: goldenrod;
+  width: 80px;
+  height: 80px;
+  transform: translate(-50%, -50%);
+}
+
+.pulseB::after,
+.pulseB::before {
+  content: '';
+  position: absolute;
+  border: 2px solid grey;
+  left: -20px;
+  opacity: 0;
+  right: -20px;
+  top: -20px;
+  bottom: -20px;
+  border-radius: 50%;
+  animation: pulse 1s linear infinite;
+}
+
+.pulseB::after {
+  animation-delay: 1.25s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+.f2{
+    position: absolute;
+    top: 45%;
+    left: 20%;
+    color: grey;
+    font-size: 1px;
+    cursor: pointer;
+    margin-bottom: 40px;
+    margin-top: 25px;
+    transform: translate(-50%, -50%);
+}
+.f2:hover{
+    position: absolute;
+    top: 30%;
+    left: 10%;
+    color: goldenrod;
+    font-size: 20px;
+    margin-bottom: 40px;
+    cursor: pointer;
+    margin-top: 25px;
+    transform: translate(-50%, -50%);
+}
+
+.pulseC {
+  position: absolute; // Нужно будет в будущем, для позиционирования эффекта
+  text-align: center; 
+  padding: 20px; // Отступ можете подобрать свой.
+  border-radius: 50%; // Делаем икноку круглой
+  background: goldenrod;
+  top: 45%;
+  left: 28%;
+  color: goldenrod;
+  width: 80px;
+  height: 80px;
+  transform: translate(-50%, -50%);
+}
+
+.pulseC::after,
+.pulseC::before {
+  content: '';
+  position: absolute;
+  border: 2px solid grey;
+  left: -20px;
+  opacity: 0;
+  right: -20px;
+  top: -20px;
+  bottom: -20px;
+  border-radius: 50%;
+  animation: pulse 1s linear infinite;
+}
+
+.pulseC::after {
+  animation-delay: 1.25s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+.f3{
+    position: absolute;
+    top: 45%;
+    left: 28%;
+    color: grey;
+    cursor: pointer;
+    font-size: 1px;
+    margin-bottom: 40px;
+    margin-top: 25px;
+    transform: translate(-50%, -50%);
+}
+
+.f3:hover{
+    position: absolute;
+    top: 45%;
+    left: 28%;
+    color: grey;
+    font-size: 20px;
+    color: goldenrod;
+    margin-bottom: 40px;
+    margin-top: 25px;
+    transform: translate(-50%, -50%);
+}
+
+.pulseD {
+  position: absolute; // Нужно будет в будущем, для позиционирования эффекта
+  text-align: center; 
+  padding: 20px; // Отступ можете подобрать свой.
+  border-radius: 50%; // Делаем икноку круглой
+  background: goldenrod;
+  top: 45%;
+  left: 34%;
+  color: goldenrod;
+  width: 80px;
+  height: 80px;
+  transform: translate(-50%, -50%);
+}
+
+.pulseD::after,
+.pulseD::before {
+  content: '';
+  position: absolute;
+  border: 2px solid grey;
+  left: -20px;
+  opacity: 0;
+  right: -20px;
+  top: -20px;
+  bottom: -20px;
+  border-radius: 50%;
+  animation: pulse 1s linear infinite;
+}
+
+.pulseD::after {
+  animation-delay: 1.25s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+
+.f4{
+    position: absolute;
+    top: 45%;
+    left: 34%;
+    cursor: pointer;
+    color: grey;
+    font-size: 1px;
+    margin-bottom: 40px;
+    margin-top: 25px;
+    transform: translate(-50%, -50%);    
+}
+.f4:hover{
+    position: absolute;
+    top: 35%;
+    left: 20%;
+    color: goldenrod;
+    font-size: 20px;
+    color: goldenrod;
+    margin-bottom: 40px;
+    margin-top: 25px;
+    transform: translate(-50%, -50%);
+}
+
+.pulseE {
+  position: absolute; // Нужно будет в будущем, для позиционирования эффекта
+  text-align: center; 
+  padding: 20px; // Отступ можете подобрать свой.
+  border-radius: 50%; // Делаем икноку круглой
+  background: goldenrod;
+  top: 47%;
+  right: -1%;
+  color: goldenrod;
+  width: 80px;
+  height: 80px;
+  transform: translate(-50%, -50%);
+}
+
+.pulseE::after,
+.pulseE::before {
+  content: '';
+  position: absolute;
+  border: 2px solid grey;
+  left: -20px;
+  opacity: 0;
+  right: -20px;
+  top: -20px;
+  bottom: -20px;
+  border-radius: 50%;
+  animation: pulse 1s linear infinite;
+}
+
+.pulseE::after {
+  animation-delay: 1.25s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+.f5{
+    position: absolute;
+    top: 45%;
+    right: 8%;
+    color: grey;
+    font-size: 1px;
+    margin-bottom: 40px;
+    margin-top: 25px;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+}
+.f5:hover{
+    position: absolute;
+    top: 30%;
+    margin-top: 30px;
+    right: -18%;
+    margin-right: 4px;
+    float: right;
+    font-size: 20px;
+    color: goldenrod;
+    transform: translate(-50%, -50%);
+}
+.pulseF {
+  position: absolute; // Нужно будет в будущем, для позиционирования эффекта
+  text-align: center; 
+  padding: 20px; // Отступ можете подобрать свой.
+  border-radius: 50%; // Делаем икноку круглой
+  background: goldenrod;
+  top: 49%;
+  right: 14%;
+  color: goldenrod;
+  width: 80px;
+  height: 80px;
+  transform: translate(-50%, -50%);
+}
+
+.pulseF::after,
+.pulseF::before {
+  content: '';
+  position: absolute;
+  border: 2px solid grey;
+  left: -20px;
+  opacity: 1;
+  right: -20px;
+  top: -20px;
+  bottom: -20px;
+  border-radius: 50%;
+  animation: pulse 1s linear infinite;
+}
+
+.pulseE::after {
+  animation-delay: 1.25s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+.f6{
+    position: absolute;
+    top: 49%;
+    right: 20%;
+    color: grey;
+    font-size: 1px;
+    cursor: pointer;
+    transform: translate(-50%, -50%);
+}
+.f6:hover{
+    position: absolute;
+    top: 30%;
+    right: -18%;
+    color: goldenrod;
+    font-size: 20px;
+    transform: translate(-50%, -50%);
+}
+.pulseG {
+  position: absolute; // Нужно будет в будущем, для позиционирования эффекта
+  text-align: center; 
+  padding: 20px; // Отступ можете подобрать свой.
+  border-radius: 50%; // Делаем икноку круглой
+  background: goldenrod;
+  top: 47%;
+  right: 19%;
+  color: goldenrod;
+  width: 80px;
+  height: 80px;
+  transform: translate(-50%, -50%);
+}
+
+.pulseG::after,
+.pulseG::before {
+  content: '';
+  position: absolute;
+  border: 2px solid grey;
+  left: -20px;
+  opacity: 1;
+  right: -20px;
+  top: -20px;
+  bottom: -20px;
+  border-radius: 50%;
+  animation: pulse 1s linear infinite;
+}
+
+.pulseG::after {
+  animation-delay: 1.25s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+.pulseI {
+  position: absolute; // Нужно будет в будущем, для позиционирования эффекта
+  text-align: center; 
+  padding: 20px; // Отступ можете подобрать свой.
+  border-radius: 50%; // Делаем икноку круглой
+  background: goldenrod;
+  top: 46%;
+  right: 26%;
+  color: goldenrod;
+  width: 80px;
+  height: 80px;
+  transform: translate(-50%, -50%);
+}
+
+.pulseI::after,
+.pulseI::before {
+  content: '';
+  position: absolute;
+  border: 2px solid grey;
+  left: -20px;
+  opacity: 1;
+  right: -20px;
+  top: -20px;
+  bottom: -20px;
+  border-radius: 50%;
+  animation: pulse 1s linear infinite;
+}
+
+.pulseI::after {
+  animation-delay: 1.25s;
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(0.5);
+    opacity: 0;
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1.2);
+    opacity: 0;
+  }
+}
+
+#okno{
+    text-align: center;
+    float: left;
+    border: 5px solid grey;
+    border-radius: 10px 10px 10px 10px;
+    width: 600px;
+    height: 400px;
+    position: relative;
+    left: 400px;
+    background-color: white;
+}
+.login {
+    text-align: center;
+    margin: 0 auto; 
+    padding: 20px; 
+    background: grey;
+    font-size: 20px;
+    font-style: italic;
+}
+
+.login li {
+    display: inline-block; 
+} 
+/*.breadcrumbs a { 
+    color: purple; 
+    text-decoration: none; 
+}
+*/
+.login li + li::before {
+    content: '/'; 
+    padding: 0 7px; 
+}
+
+input{
+    border-radius: 10px;
+    width: 400px;
+    height: 50px;
+    font-size: 20px;
+}
+
+#register{
+    width: 130px;
+    height: 40px;
+    float: right;
+    color: purple;
+    background-color: grey;
+    border-radius: 10px;
+}
+
+
+button{
+    width: 90px;
+    height: 80px;
+    color: purple;
+    background-color: goldenrod;
+    border: 0px solid goldenrod;
+    border-radius: 20px;
+    cursor: pointer;
+}
+.myBtn{
+    width: 90px;
+    height: 80px;
+    border-radius: 10px;
+    border: 0px solid goldenrod;
+    cursor: pointer;
+    position: absolute;
+    margin: 0 auto;
+    color: purple;
+    background-size: 50px;
+    font-size: 50px;
+    outline: none;
+    top: 60%;
+    right: 51%;
+    left: 675px;
+    margin-bottom: 40px;
+    transform: translate(-50%, -50%);
+
+}
+
+
+
+.btn{
+    width: 130px;
+    height: 80px;
+    border-radius: 10px;
+    border: 0px solid goldenrod;
+    cursor: pointer;
+    position: absolute;
+    margin: 0 auto;
+    color: purple;
+    font-size: 20px;
+    outline: none;
+    top: 90%;
+    right: 51%;
+    left: 675px;
+    margin-bottom: 40px;
+    transform: translate(-50%, -50%);    
+}
+
+
+
+/*.knopka{
+    border: 10px solid goldenrod;
+    width: 500px;   
+    height: 800px;
+    text-align: center;
+    margin: 0 auto;
+}
+*/
+.container{
+    width: 700px;
+    height: 400px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+
+*{
+    margin: 0;
+    padding: 0;
+    font-family: 'Poppins', sans-serif;
+}
+
+.center{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main{
+    width: 70px;
+    height: 70vh;
+}
+
+.conteinerA{
+    width: 150px;
+    height: 75px;
+    flex-direction: column;
+}
+
+.conteinerA h2{
+    font-size: 3rem;
+    margin: 25px;
+}
+
+
+
+
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed; /* Оставаться на месте */
+    z-index: 1; /* Сидеть на вершине */
+    left: 0;
+    top: 0;
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
+    overflow: auto; /* Включите прокрутку, если это необходимо */
+    background-color: rgb(0,0,0); /* Цвет запасной вариант */
+    background-color: rgba(0,0,0,0.4); /* Черный с непрозрачностью */
+}
+
+.modal2 {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed; /* Оставаться на месте */
+    z-index: 1; /* Сидеть на вершине */
+    left: 0;
+    top: 0;
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
+    overflow: auto; /* Включите прокрутку, если это необходимо */
+    background-color: rgb(0,0,0); /* Цвет запасной вариант */
+    background-color: rgba(0,0,0,0.4); /* Черный с непрозрачностью */
+}
+
+.modal3 {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed; /* Оставаться на месте */
+    z-index: 1; /* Сидеть на вершине */
+    left: 0;
+    top: 0;
+    width: 100%; /* Полная ширина */
+    height: 100%; /* Полная высота */
+    overflow: auto; /* Включите прокрутку, если это необходимо */
+    background-color: rgb(0,0,0); /* Цвет запасной вариант */
+    background-color: rgba(0,0,0,0.4); /* Черный с непрозрачностью */
+}
+
+/* Модальное содержание/коробка */
+.modal-content {
+        background-color: #fefefe;
+        margin: 15% auto; /* 15% сверху и по центру */
+        padding: 20px;
+        border: 1px solid #888;
+        width: 80%; /* Может быть больше или меньше, в зависимости от размера экрана */
+}
+
+.modal2-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% сверху и по центру */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Может быть больше или меньше, в зависимости от размера экрана */
+}
+
+.modal3-content {
+    background-color: #fefefe;
+    margin: 15% auto; /* 15% сверху и по центру */
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%; /* Может быть больше или меньше, в зависимости от размера экрана */
+}
+
+/* Кнопка закрытия */
+.closeFirst {
+    color: #aaa;
+    float: right;
+    font-size: 0px;
+    font-weight: 0px;
+}
+
+.closeFirst:hover,
+.closeFirst:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.closeSecond:hover,
+.closeSecond:focus {
+    color: black;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.wrape{
+    display: block;
+    margin-top: 0px;
+    margin-right: 5px;
+    font-size: 40px;
+    float: right;
+    font-family: 'Monserrat', serif;
+}
+
+
+#secundomer{
+    width: 80px;
+    height: 50px;
+    background: #fbefef;
+    color: #2c2a2a;
+    border-radius: 10px;
+    padding: 60px 50px 100px;
+    text-align: left;
+    font-size: 28px;
+}
+
+#secundomers span{
+    background: #40709f;
+    color: #ffeffb;
+    width: 60px;
+    border-radius: 3px;
+    margin: 5px;
+    display: inline-block;
+} 
+
+.time{
+    margin-left: 25px;
+}
+
+#secundomers span{
+    margin-left: 20px;
+}
+
+#secundomers .buttons:first-of-type{
+    margin-top: 15px;
+    position: relative;
+    cursor: pointer;
+}
+
+#secundomers .buttons{
+    position: relative;
+    font-size: 22px;
+    -webkit-appearance: none;
+    border: none;
+    background-color: #2e80b3;
+    color: white;
+    border-radius: 5px;
+    width: 60px;
+    height: 30px;
+    cursor: pointer;
+    transition: .3s;
+}
+
+#secundomers .buttons:last-child{
+    background-color: #8538a1;
+    cursor: pointer;
+    position: relative;
+}
+
+#secundomers .buttons:hover{
+    position: relative;
+    background: #2763cf;
+    color: #f1ecec;
+    cursor: pointer;
+}
+
+embed{
+    position: absolute;
+}
+.square {
+    background: #000;
+    display:inline-block;
+    border: 1px solid #fff;
+    text-align:center;
+    position: absolute;
+    cursor: pointer;
+}
+
+.square2 {
+    background: #000;
+    display:inline-block;
+    border: 1px solid #fff;
+    text-align:center;
+    position: absolute;
+    cursor: pointer;
+}
